@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@types/recharts": "^2.0.1",
+    "axios": "^1.10.0",
+    "node-fetch": "^3.3.2",
+    "pdfkit": "^0.17.1"
+  }
+}
