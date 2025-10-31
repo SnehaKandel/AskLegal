@@ -1,0 +1,449 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 252 40% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Refined AskLegal variables for light mode - futuristic theme */
+    --asklegal-dark: 220 33% 98%;
+    --asklegal-purple: 252 70% 55%;
+    --asklegal-accent: 252 70% 55%; /* Changed from blue to purple */
+    --asklegal-accent-green: 252 70% 55%; /* Changed from green to purple */
+    --asklegal-card-bg: 220 33% 99%;
+    --asklegal-text: 222 47% 15%;
+    --asklegal-heading: 222 47% 15%;
+    --asklegal-chat-bg: 0 0% 100%;
+    --asklegal-chat-text: 220 10% 20%;
+    --asklegal-form-bg: 0 0% 100%;
+    --asklegal-form-border: 240 10% 90%;
+    --asklegal-form-text: 240 10% 20%;
+    --asklegal-form-label: 240 10% 30%;
+    --asklegal-form-placeholder: 240 5% 65%;
+    --asklegal-accordion-title: 252 70% 55%;
+  }
+
+  .dark {
+    --background: 226 42% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 226 42% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 226 42% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Refined AskLegal variables for dark mode - futuristic theme */
+    --asklegal-dark: 230 42% 12%;
+    --asklegal-purple: 252 70% 65%;
+    --asklegal-accent: 252 70% 65%; /* Changed from blue to purple */
+    --asklegal-accent-green: 252 70% 65%; /* Changed from green to purple */
+    --asklegal-card-bg: 230 42% 15%;
+    --asklegal-text: 0 0% 95%;
+    --asklegal-heading: 0 0% 100%;
+    --asklegal-chat-bg: 230 42% 18%;
+    --asklegal-chat-text: 0 0% 100%;
+    --asklegal-form-bg: 230 42% 15%; 
+    --asklegal-form-border: 252 30% 30%;
+    --asklegal-form-text: 0 0% 100%;
+    --asklegal-form-label: 252 15% 85%;
+    --asklegal-form-placeholder: 252 15% 65%;
+    --asklegal-accordion-title: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+/* Custom styles for AskLegal */
+.bg-asklegal-dark {
+  background-color: hsl(var(--asklegal-dark));
+}
+
+.text-asklegal-purple {
+  color: hsl(var(--asklegal-purple));
+}
+
+.text-asklegal-accent {
+  color: hsl(var(--asklegal-accent));
+}
+
+.bg-asklegal-purple {
+  background-color: hsl(var(--asklegal-purple));
+}
+
+.bg-asklegal-accent {
+  background-color: hsl(var(--asklegal-accent));
+}
+
+.hover\:bg-asklegal-accent:hover {
+  background-color: hsl(var(--asklegal-accent));
+}
+
+.text-asklegal-heading {
+  color: hsl(var(--asklegal-heading));
+}
+
+.text-asklegal-text {
+  color: hsl(var(--asklegal-text));
+}
+
+/* Chat section styling - futuristic version */
+.chat-message {
+  background-color: hsl(var(--asklegal-chat-bg));
+  color: hsl(var(--asklegal-chat-text));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: message-appear 0.4s ease-out forwards;
+}
+
+@keyframes message-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* New glassmorphism cards with improved visual design */
+.card-glassmorphism {
+  @apply rounded-xl shadow-lg transition-all duration-300;
+  background-color: hsla(var(--asklegal-card-bg) / 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.card-glassmorphism:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.1),
+    0 6px 12px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Fix for dark mode chat input text color */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  color: hsl(var(--asklegal-form-text));
+}
+
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="search"],
+.dark input[type="number"],
+.dark input[type="tel"],
+.dark textarea {
+  color: hsl(var(--asklegal-form-text));
+  background-color: hsla(var(--asklegal-form-bg) / 0.8);
+}
+
+/* Make links in news items more visible */
+.news-link {
+  @apply text-asklegal-purple font-medium hover:underline transition-colors;
+}
+
+/* Theme transition effects */
+.theme-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Enhanced button styling - futuristic version */
+.button-primary {
+  @apply relative overflow-hidden bg-gradient-to-r from-asklegal-purple to-asklegal-accent text-white shadow-md hover:shadow-lg transition-all duration-300;
+  border: none;
+}
+
+.button-primary:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s;
+}
+
+.button-primary:hover:before {
+  left: 100%;
+}
+
+.button-secondary {
+  @apply bg-transparent border border-asklegal-purple/30 text-asklegal-purple hover:bg-asklegal-purple/10 transition-all duration-300;
+}
+
+/* Enhanced navbar styling for better visibility */
+.navbar-light {
+  @apply bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm;
+}
+
+.navbar-dark {
+  @apply bg-asklegal-dark/90 backdrop-blur-md border-b border-asklegal-purple/10 shadow-md;
+}
+
+/* Theme toggle animation */
+.theme-toggle-icon {
+  @apply transition-transform duration-300;
+}
+
+.theme-toggle-icon.active {
+  @apply scale-110;
+}
+
+/* Form styling improvements */
+.form-container {
+  @apply rounded-lg border overflow-hidden transition-all duration-300;
+  background-color: hsl(var(--asklegal-card-bg));
+  border-color: hsl(var(--asklegal-form-border));
+}
+
+.form-header {
+  @apply p-4 border-b;
+  background-color: hsl(var(--asklegal-form-bg) / 0.6);
+  border-color: hsl(var(--asklegal-form-border));
+}
+
+.form-header-title {
+  @apply text-lg font-medium;
+  color: hsl(var(--asklegal-heading));
+}
+
+.form-body {
+  @apply p-6 space-y-6;
+  background-color: hsl(var(--asklegal-form-bg) / 0.8);
+}
+
+.form-input {
+  @apply bg-white/80 dark:bg-gray-800/80 border rounded-md px-3 py-2 w-full transition-colors duration-200;
+  border-color: hsl(var(--asklegal-form-border));
+  color: hsl(var(--asklegal-form-text));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.form-input:focus {
+  @apply outline-none ring-1;
+  border-color: hsl(var(--asklegal-accent));
+  ring-color: hsl(var(--asklegal-accent) / 0.5);
+  box-shadow: 0 0 0 3px hsla(var(--asklegal-accent) / 0.1);
+}
+
+.form-label {
+  @apply block mb-1 text-sm font-medium;
+  color: hsl(var(--asklegal-form-label));
+}
+
+.form-input::placeholder {
+  color: hsl(var(--asklegal-form-placeholder));
+}
+
+.accordion-title {
+  color: hsl(var(--asklegal-accordion-title));
+  @apply font-medium;
+}
+
+/* Dynamic gradient background effect for hero section */
+.hero-gradient {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    hsla(var(--asklegal-purple) / 0.05) 0%, 
+    hsla(var(--asklegal-purple) / 0.1) 50%, 
+    hsla(var(--asklegal-purple) / 0.05) 100%);
+  z-index: -1;
+  filter: blur(5px);
+  animation: shift-gradient 15s ease-in-out infinite alternate;
+}
+
+@keyframes shift-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animated button styles */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animated:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, 
+    hsla(var(--asklegal-purple) / 0.7) 0%,
+    hsla(var(--asklegal-purple) / 0.7) 50%,
+    hsla(var(--asklegal-purple) / 0.7) 100%);
+  z-index: -1;
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Floating chat bubble */
+.chat-bubble {
+  @apply fixed z-50 bottom-6 right-6 size-16 rounded-full flex items-center justify-center shadow-lg cursor-pointer;
+  background-color: hsl(var(--asklegal-purple));
+  border: 2px solid hsla(var(--asklegal-accent) / 0.3);
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.chat-bubble:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 hsla(var(--asklegal-purple) / 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px hsla(var(--asklegal-purple) / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 hsla(var(--asklegal-purple) / 0);
+  }
+}
+
+/* Print styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .bg-asklegal-dark {
+    background-color: transparent !important;
+  }
+
+  .text-white {
+    color: #000 !important;
+  }
+
+  .bg-white {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none !important;
+  }
+
+  .bg-white * {
+    visibility: visible;
+  }
+}
