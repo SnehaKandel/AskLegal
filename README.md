@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+#  AskLegal — AI-Powered Legal Assistance System
 
-## Project info
 
-**URL**: https://lovable.dev/projects/5b9b43af-9c9d-4f48-8127-309f94574347
 
-## How can I edit this code?
+**AskLegal** is a Retrieval-Augmented Generation (RAG) based web application designed to make legal information more accessible and transparent.  
+It aims to **foster increased citizen participation** in the legal system by allowing users to interactively query legal documents, receive AI-generated insights with citations, and stay updated on the latest legal news.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+##  Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5b9b43af-9c9d-4f48-8127-309f94574347) and start prompting.
+###  Intelligent Legal Query System  
+- Built using a **locally hosted Ollama model** integrated with a **Nomic Embedding model**.  
+- Provides **accurate responses** with **citations and confidence scores** for every answer.  
+- Enables context-aware understanding of user queries using RAG architecture.
 
-Changes made via Lovable will be committed automatically to this repo.
+###  Real-time Legal News Feed  
+- Fetches and displays **legal and civic news** updated automatically every **5 minutes**.  
+- Keeps users informed about recent legal changes and events.
 
-**Use your preferred IDE**
+###  Law Repository with In-document Search  
+- Centralized database of **legal acts and documents**.  
+- Users can **search within documents** for specific terms, phrases, or sections.  
+- Includes an **auto-updating input form** for quick updates or user inputs.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+###  Utility Tools  
+- **Data Converter**: Converts between common file/data formats.  
+- **In-System Translator**: Helps users translate legal text instantly.  
+- **Quiz Module**: Gamifies the experience with short legal quizzes to promote awareness.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+##  Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+| Category | Technology |
+|-----------|-------------|
+| **Frontend** | React, TypeScript, Vite |
+| **Styling** | Tailwind CSS, shadcn/ui |
+| **Backend / AI** | Ollama (Local LLM), Nomic Embedding |
+| **Data Handling** | REST APIs, JSON, Local Storage |
+| **Others** | Node.js, npm |
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+##  System Architecture
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+The project follows a **Retrieval-Augmented Generation (RAG)** architecture:
+
+1. **User Query Input** → Processed locally via Ollama  
+2. **Document Retrieval** → Nomic embeddings used to fetch relevant context  
+3. **Response Generation** → Combined context passed to the language model  
+4. **Output Display** → Response shown with citations and confidence score  
+
+
+
+##  Installation & Setup
+
+To run this project locally, follow these steps:
+
+```bash
+# Step 1: Clone the repository
+git clone https://github.com/<your-username>/AskLegal.git
+
+# Step 2: Navigate into the project folder
+cd AskLegal
+
+# Step 3: Install dependencies
+npm install
+
+# Step 4: Start the development server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/5b9b43af-9c9d-4f48-8127-309f94574347) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
