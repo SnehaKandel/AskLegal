@@ -65,7 +65,8 @@ Response Generation → Ollama model generates grounded response with references
 
 Output Layer → Rendered in UI with source citations and confidence score.
 
-**📊 Dynamic Modelling (Sequence Diagram ) **
+📊 **Dynamic Modelling (Sequence Diagram )**
+
 <img width="1034" height="702" alt="image" src="https://github.com/user-attachments/assets/daf51895-b7e9-4b90-9d53-a2e2f1e11d2b" />
 
 ---
