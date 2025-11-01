@@ -1,71 +1,83 @@
-#  AskLegal — AI-Powered Legal Assistance System
+⚖️ AskLegal : AI-Powered Legal Assistance System
 
+AskLegal is a Retrieval-Augmented Generation (RAG)-driven intelligent legal assistant designed to streamline access to Nepali legal information.
+It integrates local LLM inference, semantic document retrieval, and automated news aggregation to enhance transparency and legal literacy.
 
+🧠 Overview
 
-**AskLegal** is a Retrieval-Augmented Generation (RAG) based web application designed to make legal information more accessible and transparent.  
-It aims to **foster increased citizen participation** in the legal system by allowing users to interactively query legal documents, receive AI-generated insights with citations, and stay updated on the latest legal news.
+AskLegal leverages local AI inference via the Ollama runtime and Nomic Embedding models to process user queries against a curated corpus of Nepali legal acts and documents.
+The system retrieves semantically relevant context, performs grounded generation, and delivers contextual, cited, and confidence-scored responses — ensuring minimal hallucination and verifiable output.
 
----
+⚙️ Core Features
+🧩 Legal Query Engine (RAG Pipeline)
 
-##  Features
+Local inference using Ollama (supports models like Llama2 or Mistral).
 
-###  Intelligent Legal Query System  
-- Built using a **locally hosted Ollama model** integrated with a **Nomic Embedding model**.  
-- Provides **accurate responses** with **citations and confidence scores** for every answer.  
-- Enables context-aware understanding of user queries using RAG architecture.
+Semantic vector search powered by Nomic Embeddings for context retrieval.
 
-###  Real-time Legal News Feed  
-- Fetches and displays **legal and civic news** updated automatically every **5 minutes**.  
-- Keeps users informed about recent legal changes and events.
+Implements context chunking, re-ranking, and response grounding.
 
-###  Law Repository with In-document Search  
-- Centralized database of **legal acts and documents**.  
-- Users can **search within documents** for specific terms, phrases, or sections.  
-- Includes an **auto-updating input form** for quick updates or user inputs.
+Outputs include citations, source links, and confidence metrics.
 
-###  Utility Tools  
-- **Data Converter**: Converts between common file/data formats.  
-- **In-System Translator**: Helps users translate legal text instantly.  
-- **Quiz Module**: Gamifies the experience with short legal quizzes to promote awareness.
+📰 Real-Time Legal News Module
 
----
+Integrates a cron-based fetcher to scrape and update civic/legal news every 5 minutes.
 
-##  Tech Stack
+Backend uses scheduled jobs to maintain real-time feeds.
 
-| Category | Technology |
-|-----------|-------------|
-| **Frontend** | React, TypeScript, Vite |
-| **Styling** | Tailwind CSS, shadcn/ui |
-| **Backend / AI** | Ollama (Local LLM), Nomic Embedding |
-| **Data Handling** | REST APIs, JSON, Local Storage |
-| **Others** | Node.js, npm |
+📚 Legal Document Repository
 
----
+Indexed repository of structured and unstructured legal documents.
 
-##  System Architecture
+Implements vectorized search and full-text search using embeddings and keyword matching.
 
-The project follows a **Retrieval-Augmented Generation (RAG)** architecture:
+Includes an auto-update form for new document ingestion.
 
-1. **User Query Input** → Processed locally via Ollama  
-2. **Document Retrieval** → Nomic embeddings used to fetch relevant context  
-3. **Response Generation** → Combined context passed to the language model  
-4. **Output Display** → Response shown with citations and confidence score  
+🛠️ Utility & User Tools
 
+In-App Translator: Uses model-assisted translation for Nepali ↔ English legal text.
 
+Legal Quiz Engine: Lightweight gamified component to improve civic awareness.
 
-##  Installation & Setup
+🧱 Tech Stack
+Layer	Technology
+Frontend	React, TypeScript, Vite
+UI / Styling	Tailwind CSS, shadcn/ui
+Backend / API Layer	Node.js (Express), REST API
+AI / Embeddings	Ollama (Local LLM), Nomic Embeddings
+Vector Storage	In-memory / local JSON-based vector store
+Data Management	Local Storage, JSON schema
+Dev Tools	npm, Git, VSCode
 
-To run this project locally, follow these steps:
+🧩 System Architecture
 
-```bash
-# Step 1: Clone the repository
+Retrieval-Augmented Generation (RAG) Flow:
+
+User Query → Captured via frontend (React form input).
+
+Preprocessing → Tokenization and normalization.
+
+Embedding Retrieval → Nomic model generates vector embeddings; semantic similarity search executed.
+
+Context Construction → Top-k relevant document chunks retrieved.
+
+Response Generation → Ollama model generates grounded response with references.
+
+Output Layer → Rendered in UI with source citations and confidence score.
+
+🧰 Installation & Local Setup
+# 1. Clone the repository
 git clone https://github.com/<your-username>/AskLegal.git
 
-# Step 2: Navigate into the project folder
+# 2. Navigate to the project directory
 cd AskLegal
 
-# Step 3: Install dependencies
+# 3. Install dependencies
 npm install
 
-# Step 4: Start the development server
+# 4. Start the development server
 npm run dev
+
+
+Ensure that Ollama and Nomic models are installed and running locally before starting the backend.
+
